@@ -1,32 +1,35 @@
 export class Embarcacao {
+    //Detalhes da Embarcação
     id!: number;
-    qtdMotores!: number;
-    arqueacaoLiquida!: number;
-    bocaMoldada!: number;
-    areaNavegacao!: string;
-    compPerpendicular!: number;
+    nomeEmbarcacao!: string;
     numCasco!: string;
+    numInscricao!: string;
+    tipoEmbarcacao!: string;
+    tipoAtividade!: string;
+    areaNavegacao!: string;
     dtConstrucao!: Date;
+    dtInscricao!: Date;
     capArmazenamento!: number;
     matCasco!: string;
     qtdTripulantes!: number;
-    contorno!: number;
-    compTotal!: number;
     lotacao!: number;
     tipoPropulsao!: string;
-    matSuperestrutura!: string;
-    pontalMoldado!: number;
-    construtor!: string;
-    arqueacaoBruta!: number;
-    tipoEmbarcacao!: string;
-    nomeEmbarcacao!: string;
-    corPredominante!: string;
-    porteBruto!: string;
-    dtInscricao!: Date;
+    qtdMotores!: number;
     potenciaMotor!: number;
+    matSuperestrutura!: string;
+    construtor!: string;
+    corPredominante!: string;
+    //medidas
+    compTotal!: number;
+    compPerpendicular!: number;
+    arqueacaoBruta!: number;
+    arqueacaoLiquida!: number;
+    bocaMoldada!: number;
+    contorno!: number;
+    porteBruto!: string;
     calado!: string;
-    numInscricao!: string;
-    tipoAtividade!: string;
+    pontalMoldado!: number;   
+    //endereço
     logradouro!: string;
     bairro!: string;
     numero!: number;

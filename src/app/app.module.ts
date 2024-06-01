@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ListarEmbarcacaoComponent } from './embarcacao/listarembarcacao/listar-embarcacao.component';
 import { ConsultarEmbarcacaoComponent } from './embarcacao/consultarembarcacao/consultar-embarcacao.component';
 import { CadastrarEmbarcacaoComponent } from './embarcacao/cadastrarembarcacao/cadastrar-embarcacao.component';
+import { AlterarEmbarcacaoComponent } from './embarcacao/alterarembarcacao/alterar-embarcacao.component';
 
 
 
@@ -19,6 +20,7 @@ import { CadastrarEmbarcacaoComponent } from './embarcacao/cadastrarembarcacao/c
     ListarEmbarcacaoComponent,
     ConsultarEmbarcacaoComponent,
     CadastrarEmbarcacaoComponent,
+    AlterarEmbarcacaoComponent,
   ],
   imports: [
     BrowserModule,
