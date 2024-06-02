@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes da Embarcação</title>
     <link rel="stylesheet" href="consultar-embarcacao.component.css">
 </head>
+
 <body>
     <div class="container">
         <h3>Detalhes da Embarcação</h3>
@@ -30,7 +32,9 @@
         <div><label><b>Construtor:</b></label> {{ embarcacao.construtor }}</div>
         <div><label><b>Cor Predominante:</b></label> {{ embarcacao.corPredominante }}</div>
         <br>
-        <label><h4>Medidas</h4></label>
+        <label>
+            <h4>Medidas</h4>
+        </label>
         <br>
         <div><label><b>Comprimento Total:</b></label> {{ embarcacao.compTotal }}</div>
         <div><label><b>Comprimento Perpendicular:</b></label> {{ embarcacao.compPerpendicular }}</div>
@@ -41,9 +45,11 @@
         <div><label><b>Porte Bruto:</b></label> {{ embarcacao.porteBruto }}</div>
         <div><label><b>Calado:</b></label> {{ embarcacao.calado }}</div>
         <div><label><b>Pontal Moldado:</b></label> {{ embarcacao.pontalMoldado }}</div>
-        
+
         <br>
-        <label><h4>Endereço</h4></label>
+        <label>
+            <h4>Endereço</h4>
+        </label>
         <br>
         <div><label><b>Logradouro:</b></label> {{ embarcacao.logradouro }}</div>
         <div><label><b>Bairro:</b></label> {{ embarcacao.bairro }}</div>
@@ -53,10 +59,11 @@
         <div><label><b>Cidade:</b></label> {{ embarcacao.cidade }}</div>
         <div><label><b>CEP:</b></label> {{ embarcacao.CEP }}</div>
         <br><br>
-        
+
     </div>
     <div>
-            <button (click)="retornar()" class="btn btn-success" style="margin-left: 10px;">Voltar</button>
+        <button (click)="retornar()" class="btn btn-success" style="margin-left: 10px;">Voltar</button>
     </div>
 </body>
+
 </html>

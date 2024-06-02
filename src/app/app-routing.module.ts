@@ -17,6 +17,7 @@ const routes: Routes = [
 {path: 'embarcacao/cadastrar-embarcacao', component: CadastrarEmbarcacaoComponent},
 {path: 'embarcacao/alterar-embarcacao/:id', component: AlterarEmbarcacaoComponent},
 
+
 ];
 
 @NgModule({
