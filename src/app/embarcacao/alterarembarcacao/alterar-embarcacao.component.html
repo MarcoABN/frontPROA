@@ -145,7 +145,12 @@
         <h4>Endereço</h4>
         <div class="form-group">
             <label for="CEP">CEP</label>
-            <input type="text" class="form-control" id="CEP" [(ngModel)]="embarcacao.CEP" name="CEP" required>
+            <div class="input-group">
+                <input type="text" class="form-control" id="CEP" [(ngModel)]="embarcacao.CEP" name="CEP" required>
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-primary" (click)="buscarEndereco()">Buscar</button>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <label for="logradouro">Logradouro</label>
@@ -181,5 +186,4 @@
         </div>
 
     </form>
-
 </div>
