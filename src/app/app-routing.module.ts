@@ -7,7 +7,6 @@ import { CadastrarEmbarcacaoComponent } from './embarcacao/cadastrarembarcacao/c
 import { AlterarEmbarcacaoComponent } from './embarcacao/alterarembarcacao/alterar-embarcacao.component';
 
 
-
 const routes: Routes = [
 
 {path: '', redirectTo: 'inicio', pathMatch: 'full'},
@@ -16,7 +15,6 @@ const routes: Routes = [
 {path: 'embarcacao/consultar-embarcacao/:id', component: ConsultarEmbarcacaoComponent},
 {path: 'embarcacao/cadastrar-embarcacao', component: CadastrarEmbarcacaoComponent},
 {path: 'embarcacao/alterar-embarcacao/:id', component: AlterarEmbarcacaoComponent},
-
 
 ];
 
