@@ -18,8 +18,10 @@ export class InicioComponent {
     this.router.navigate(['/embarcacao/cadastrar-embarcacao']);
   }
 
-  emitiranexos(){
-    this.router.navigate(['/anexos']);
+  
+  consultarCliente(){
+    this.router.navigate(['/cliente/consultarcliente', 1]);
   }
+
 
 }

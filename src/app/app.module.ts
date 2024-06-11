@@ -10,6 +10,7 @@ import { ListarEmbarcacaoComponent } from './embarcacao/listarembarcacao/listar-
 import { ConsultarEmbarcacaoComponent } from './embarcacao/consultarembarcacao/consultar-embarcacao.component';
 import { CadastrarEmbarcacaoComponent } from './embarcacao/cadastrarembarcacao/cadastrar-embarcacao.component';
 import { AlterarEmbarcacaoComponent } from './embarcacao/alterarembarcacao/alterar-embarcacao.component';
+import { ConsultarClienteComponent } from './cliente/consultarcliente/consultar-cliente.component';
 
 
 
@@ -21,6 +22,9 @@ import { AlterarEmbarcacaoComponent } from './embarcacao/alterarembarcacao/alter
     ConsultarEmbarcacaoComponent,
     CadastrarEmbarcacaoComponent,
     AlterarEmbarcacaoComponent,
+
+    ConsultarClienteComponent,
+    
   ],
   imports: [
     BrowserModule,

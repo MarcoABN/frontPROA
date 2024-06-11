@@ -5,6 +5,7 @@ import { ListarEmbarcacaoComponent } from './embarcacao/listarembarcacao/listar-
 import { ConsultarEmbarcacaoComponent } from './embarcacao/consultarembarcacao/consultar-embarcacao.component';
 import { CadastrarEmbarcacaoComponent } from './embarcacao/cadastrarembarcacao/cadastrar-embarcacao.component';
 import { AlterarEmbarcacaoComponent } from './embarcacao/alterarembarcacao/alterar-embarcacao.component';
+import { ConsultarClienteComponent } from './cliente/consultarcliente/consultar-cliente.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,8 @@ const routes: Routes = [
 {path: 'embarcacao/consultar-embarcacao/:id', component: ConsultarEmbarcacaoComponent},
 {path: 'embarcacao/cadastrar-embarcacao', component: CadastrarEmbarcacaoComponent},
 {path: 'embarcacao/alterar-embarcacao/:id', component: AlterarEmbarcacaoComponent},
+
+{path: 'cliente/consultarcliente/:id', component: ConsultarClienteComponent},
 
 ];
 
