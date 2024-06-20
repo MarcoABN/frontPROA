@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FrontClienteService } from './front-embarcacao.service';
+import { FrontClienteService } from './front-cliente.service';
 
 describe('FrontClienteService', () => {
   let service: FrontClienteService;

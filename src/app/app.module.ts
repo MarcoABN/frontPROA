@@ -11,6 +11,10 @@ import { ConsultarEmbarcacaoComponent } from './embarcacao/consultarembarcacao/c
 import { CadastrarEmbarcacaoComponent } from './embarcacao/cadastrarembarcacao/cadastrar-embarcacao.component';
 import { AlterarEmbarcacaoComponent } from './embarcacao/alterarembarcacao/alterar-embarcacao.component';
 import { ConsultarClienteComponent } from './cliente/consultarcliente/consultar-cliente.component';
+import { ListarClienteComponent } from './cliente/listarcliente/listar-cliente.component';
+import { CadastrarClienteComponent } from './cliente/cadastrarcliente/cadastrar-cliente.component';
+import { AlterarClienteComponent } from './cliente/alterarcliente/alterar-cliente.component';
+import { AnexosComponent } from './anexos/anexos.component';
 
 
 
@@ -24,6 +28,11 @@ import { ConsultarClienteComponent } from './cliente/consultarcliente/consultar-
     AlterarEmbarcacaoComponent,
 
     ConsultarClienteComponent,
+    ListarClienteComponent,
+    CadastrarClienteComponent,
+    AlterarClienteComponent,
+
+    AnexosComponent,
     
   ],
   imports: [

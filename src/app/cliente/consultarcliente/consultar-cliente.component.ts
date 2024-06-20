@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FrontClienteService } from 'src/app/services/front-cliente.service';
 import { Cliente } from 'src/app/model/cliente';
-import { AnexosService } from 'src/app/services/anexos/anexo2D.service';
 
 @Component({
   selector: 'app-consultar-cliente',
@@ -15,7 +14,6 @@ export class ConsultarClienteComponent implements OnInit {
   cliente!: Cliente;
 
   constructor(
-    private anexosService: AnexosService,
     private clienteService: FrontClienteService,
     private router: Router,
     private route: ActivatedRoute
@@ -30,7 +28,7 @@ export class ConsultarClienteComponent implements OnInit {
   }
 
   retornar() {
-    this.router.navigate(['../inicio']);
+    this.router.navigate(['/cliente/listar-cliente']);
   }
 
 }

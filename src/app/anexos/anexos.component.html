@@ -1,0 +1,39 @@
+<div class="container" style="height: 80vh; overflow-y: auto;">
+    <h1>Consultar Anexo</h1>
+    <form (ngSubmit)="consultarAnexo()">
+        <div class="form-group">
+            <label for="cliente">Cliente</label>
+            <input type="text" class="form-control" id="cliente" [(ngModel)]="idCliente" name="cliente" required>
+        </div>
+        <div class="form-group">
+            <label for="embarcacao">Embarcação</label>
+            <input type="text" class="form-control" id="embarcacao" [(ngModel)]="idEmbarcacao" name="embarcacao" required>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </div>
+    </form>
+    
+    <div *ngIf="cliente && embarcacao">
+        <h4>Resultados da Pesquisa</h4>
+        <div class="form-group">
+            <label for="idEmbarcacao">ID da Embarcação</label>
+            <input type="text" class="form-control" id="idEmbarcacao" [(ngModel)]="embarcacao.id" name="idEmbarcacao" disabled>
+        </div>
+        <div class="form-group">
+            <label for="nomeEmbarcacao">Nome da Embarcação</label>
+            <input type="text" class="form-control" id="nomeEmbarcacao" [(ngModel)]="embarcacao.nomeEmbarcacao" name="nomeEmbarcacao" disabled>
+        </div>
+        <div class="form-group">
+            <label for="idCliente">ID do Cliente</label>
+            <input type="text" class="form-control" id="idCliente" [(ngModel)]="cliente.id" name="idCliente" disabled>
+        </div>
+        <div class="form-group">
+            <label for="nomeCliente">Nome do Cliente</label>
+            <input type="text" class="form-control" id="nomeCliente" [(ngModel)]="cliente.nome" name="nomeCliente" disabled>
+        </div>
+        <div class="button-container">
+            <button type="button" class="btn btn-secondary" (click)="gerarpdf()">Gerar PDF</button>
+        </div>
+    </div>
+</div>

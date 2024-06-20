@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { PDFDocument } from 'pdf-lib';
 import { Embarcacao } from '../../model/embarcacao';
+import { Cliente } from 'src/app/model/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class AnexosService {
 
   constructor() { }
 
-  async anexo2D(embarcacao: Embarcacao): Promise<void> {
+  async anexo2D(embarcacao: Embarcacao, cliente: Cliente): Promise<void> {
     try {
       const pdfBytes = await fetch('assets/Anexo2DPreenchivel.pdf').then(res => res.arrayBuffer());
       const pdfDoc = await PDFDocument.load(pdfBytes);
@@ -41,6 +42,22 @@ export class AnexosService {
       form.getTextField('matCasco').setText(embarcacao.matCasco);
 
       form.getRadioGroup('naturezaIncricao').select('Value_ihca');
+
+
+      form.getTextField('nomeReq').setText(cliente.nome);
+      form.getTextField('enderecoReq').setText(`${cliente.logradouro}, ${cliente.numero} - ${cliente.complemento}`);
+      form.getTextField('cidadeReq').setText(cliente.cidade);
+      form.getTextField('bairroReq').setText(cliente.bairro);      
+      form.getTextField('cepReq').setText(cliente.CEP);
+      form.getTextField('identidadeReq').setText(cliente.rg);
+      form.getTextField('orgEmissorReq').setText(cliente.orgEmissor);
+      form.getTextField('dtEmissaoReq').setText(cliente.dtEmissao.toString());
+      form.getTextField('CPFCNPJReq').setText(cliente.cpfcnpj);
+      form.getTextField('telReq').setText(cliente.telefone);
+      form.getTextField('celReq').setText(cliente.celular);
+      form.getTextField('emailReq').setText(cliente.email);
+
+
 
       
       const radioFields = form.getFields().filter((f)=>f.constructor.name === 'PDFRadioGroup');

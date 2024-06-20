@@ -11,13 +11,13 @@ export class Cliente {
     //corrigir
     dtNasc!: Date;
     telefone!: string;
-    celular!: String;
+    celular!: string;
     email!: string;
     //tratar senha posteriormente
     senha!: string;
 
     //Dados de endereço
-    CEP!: String;
+    CEP!: string;
     logradouro!: string;
     numero!: string;
     complemento!: string;

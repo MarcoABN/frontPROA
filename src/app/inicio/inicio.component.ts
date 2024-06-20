@@ -19,9 +19,16 @@ export class InicioComponent {
   }
 
   
-  consultarCliente(){
-    this.router.navigate(['/cliente/consultarcliente', 1]);
+  listarCliente(){
+    this.router.navigate(['/cliente/listar-cliente']);
   }
 
+  cadastrarCliente(){
+    this.router.navigate(['/cliente/cadastrar-cliente']);
+  }
+
+  emitirAnexos(){
+    this.router.navigate(['/anexos/anexos']);
+  }
 
 }

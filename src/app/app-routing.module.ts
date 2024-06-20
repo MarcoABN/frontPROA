@@ -6,6 +6,10 @@ import { ConsultarEmbarcacaoComponent } from './embarcacao/consultarembarcacao/c
 import { CadastrarEmbarcacaoComponent } from './embarcacao/cadastrarembarcacao/cadastrar-embarcacao.component';
 import { AlterarEmbarcacaoComponent } from './embarcacao/alterarembarcacao/alterar-embarcacao.component';
 import { ConsultarClienteComponent } from './cliente/consultarcliente/consultar-cliente.component';
+import { CadastrarClienteComponent } from './cliente/cadastrarcliente/cadastrar-cliente.component';
+import { ListarClienteComponent } from './cliente/listarcliente/listar-cliente.component';
+import { AlterarClienteComponent } from './cliente/alterarcliente/alterar-cliente.component';
+import { AnexosComponent } from './anexos/anexos.component';
 
 
 const routes: Routes = [
@@ -17,7 +21,13 @@ const routes: Routes = [
 {path: 'embarcacao/cadastrar-embarcacao', component: CadastrarEmbarcacaoComponent},
 {path: 'embarcacao/alterar-embarcacao/:id', component: AlterarEmbarcacaoComponent},
 
-{path: 'cliente/consultarcliente/:id', component: ConsultarClienteComponent},
+{path: 'cliente/listar-cliente', component: ListarClienteComponent},
+{path: 'cliente/cadastrar-cliente', component: CadastrarClienteComponent},
+{path: 'cliente/consultar-cliente/:id', component: ConsultarClienteComponent},
+{path: 'cliente/alterar-cliente/:id', component: AlterarClienteComponent},
+
+{path: 'anexos/anexos', component: AnexosComponent},
+
 
 ];
 
