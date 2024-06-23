@@ -13,27 +13,56 @@
             <button type="submit" class="btn btn-primary">Pesquisar</button>
         </div>
     </form>
-    
-    <div *ngIf="cliente && embarcacao">
-        <h4>Resultados da Pesquisa</h4>
-        <div class="form-group">
-            <label for="idEmbarcacao">ID da Embarcação</label>
-            <input type="text" class="form-control" id="idEmbarcacao" [(ngModel)]="embarcacao.id" name="idEmbarcacao" disabled>
+
+    <h4>Resultados da Pesquisa</h4>
+    <div class="form-group">
+        <label for="idEmbarcacao">ID da Embarcação</label>
+        <input type="text" class="form-control" id="idEmbarcacao" [(ngModel)]="embarcacao.id" name="idEmbarcacao" disabled>
+    </div>
+    <div class="form-group">
+        <label for="nomeEmbarcacao">Nome da Embarcação</label>
+        <input type="text" class="form-control" id="nomeEmbarcacao" [(ngModel)]="embarcacao.nomeEmbarcacao" name="nomeEmbarcacao" disabled>
+    </div>
+    <div class="form-group">
+        <label for="idCliente">ID do Cliente</label>
+        <input type="text" class="form-control" id="idCliente" [(ngModel)]="cliente.id" name="idCliente" disabled>
+    </div>
+    <div class="form-group">
+        <label for="nomeCliente">Nome do Cliente</label>
+        <input type="text" class="form-control" id="nomeCliente" [(ngModel)]="cliente.nome" name="nomeCliente" disabled>
+    </div>
+
+    <div class="form-group">
+        <label>Natureza</label>
+        <div>
+            <input type="radio" id="naturezaIncricao" name="natureza" value="Inscrição" [(ngModel)]="natureza" required [disabled]="!cliente || !embarcacao">
+            <label for="naturezaIncricao">Inscrição</label>
         </div>
-        <div class="form-group">
-            <label for="nomeEmbarcacao">Nome da Embarcação</label>
-            <input type="text" class="form-control" id="nomeEmbarcacao" [(ngModel)]="embarcacao.nomeEmbarcacao" name="nomeEmbarcacao" disabled>
+        <div>
+            <input type="radio" id="naturezaCancelamento" name="natureza" value="Cancelamento" [(ngModel)]="natureza" [disabled]="!cliente || !embarcacao">
+            <label for="naturezaCancelamento">Cancelamento</label>
         </div>
-        <div class="form-group">
-            <label for="idCliente">ID do Cliente</label>
-            <input type="text" class="form-control" id="idCliente" [(ngModel)]="cliente.id" name="idCliente" disabled>
+        <div>
+            <input type="radio" id="naturezaTransfProprietario" name="natureza" value="Transf. Propriedade" [(ngModel)]="natureza" [disabled]="!cliente || !embarcacao">
+            <label for="naturezaTransfProprietario">Transf. Propriedade</label>
         </div>
-        <div class="form-group">
-            <label for="nomeCliente">Nome do Cliente</label>
-            <input type="text" class="form-control" id="nomeCliente" [(ngModel)]="cliente.nome" name="nomeCliente" disabled>
+        <div>
+            <input type="radio" id="naturezaTransfJurisdicao" name="natureza" value="Transf. Jurisdição" [(ngModel)]="natureza" [disabled]="!cliente || !embarcacao">
+            <label for="naturezaTransfJurisdicao">Transf. Jurisdição</label>
         </div>
-        <div class="button-container">
-            <button type="button" class="btn btn-secondary" (click)="gerarpdf()">Gerar PDF</button>
+        <div>
+            <input type="radio" id="naturezaAtualizacao" name="natureza" value="Atualização de Dados" [(ngModel)]="natureza" [disabled]="!cliente || !embarcacao">
+            <label for="naturezaAtualizacao">Atualização de Dados</label>
         </div>
+        <div>
+            <input type="radio" id="naturezaEmissao" name="natureza" value="Emissão de Certidão" [(ngModel)]="natureza" [disabled]="!cliente || !embarcacao">
+            <label for="naturezaEmissao">Emissão de Certidão</label>
+        </div>
+    </div>
+
+    <div *ngIf="mostrarErroNatureza" class="alert alert-danger">Selecione uma opção de natureza antes de gerar o PDF.</div>
+
+    <div class="button-container">
+        <button type="button" class="btn btn-secondary" (click)="gerarpdf()" [disabled]="!cliente || !embarcacao">Gerar PDF</button>
     </div>
 </div>

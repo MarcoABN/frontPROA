@@ -9,7 +9,7 @@ import { FrontClienteService } from "../services/front-cliente.service";
 @Component({
     selector: 'app-anexos',
     templateUrl: './anexos.component.html',
-    styleUrls: ['./anexos.componente.css']
+    styleUrls: ['./anexos.component.css']
 })
 
 export class AnexosComponent {
@@ -17,6 +17,7 @@ export class AnexosComponent {
     idCliente!: number;
     embarcacao!: Embarcacao;
     cliente!: Cliente;
+    natureza!: string;
 
     constructor(
         private anexosService: AnexosService,
@@ -25,6 +26,9 @@ export class AnexosComponent {
         private router: Router,
         private route: ActivatedRoute
     ) {}
+
+    mostrarErroNatureza: boolean = false;
+
 
     consultarAnexo() {
         this.clienteService.consultarCliente(this.idCliente).subscribe(data => {
@@ -41,6 +45,14 @@ export class AnexosComponent {
     }
 
     gerarpdf() {
-        this.anexosService.anexo2D(this.embarcacao, this.cliente);
+        if (!this.natureza) {
+            this.mostrarErroNatureza = true;
+            return;
+        }
+    
+        this.mostrarErroNatureza = false;
+        this.anexosService.anexo2D(this.embarcacao, this.cliente, this.natureza);
+        console.log(this.natureza);
     }
+    
 }

@@ -10,7 +10,7 @@ export class AnexosService {
 
   constructor() { }
 
-  async anexo2D(embarcacao: Embarcacao, cliente: Cliente): Promise<void> {
+  async anexo2D(embarcacao: Embarcacao, cliente: Cliente, natureza: string): Promise<void> {
     try {
       const pdfBytes = await fetch('assets/Anexo2DPreenchivel.pdf').then(res => res.arrayBuffer());
       const pdfDoc = await PDFDocument.load(pdfBytes);
@@ -40,9 +40,20 @@ export class AnexosService {
       form.getTextField('contorno').setText(embarcacao.contorno.toString());
       form.getTextField('pontal').setText(embarcacao.pontalMoldado.toString());
       form.getTextField('matCasco').setText(embarcacao.matCasco);
-
-      form.getRadioGroup('naturezaIncricao').select('Value_ihca');
-
+           
+      if (natureza === 'Inscrição'){
+        form.getRadioGroup('naturezaIncricao').select('Value_ihca');
+      }else if (natureza === 'Cancelamento'){
+        form.getRadioGroup('naturezaCancelamento').select('Value_ymuy');
+      }else if (natureza === 'Transf. Propriedade'){
+        form.getRadioGroup('naturezaTransfProprietario').select('Value_kkky');
+      }else if (natureza === 'Transf. Jurisdição'){
+        form.getRadioGroup('naturezaTransfJurisdicao').select('Value_bvny');
+      }else if (natureza === 'Atualização de Dados'){
+        form.getRadioGroup('naturezaAtualizacao').select('Value_rpdp');
+      }else if (natureza === 'Emissão de Certidão'){
+        form.getRadioGroup('naturezaEmissao').select('Value_scbh');
+      };
 
       form.getTextField('nomeReq').setText(cliente.nome);
       form.getTextField('enderecoReq').setText(`${cliente.logradouro}, ${cliente.numero} - ${cliente.complemento}`);
